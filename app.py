@@ -14,7 +14,7 @@ from flask_httpauth import HTTPBasicAuth
 import json
 # Custom Imports
 from info_form import GetInfoForm
-from google_api_call import GoogleAPICall
+from google_api_call import GoogleApiCall
 
 app = Flask(__name__)
 api = Api(app, prefix="/api/v1")
@@ -42,7 +42,8 @@ class PrivateIndex(Resource):
     def post(self):
         print('-- PrivateIndex.post')
         try:
-            form = GoogleAPICall()
+       
+            form = GoogleApiCall()
             html_content = form.main()
 
             # Wrap the HTML content in a JSON-compatible dictionary
